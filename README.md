@@ -39,8 +39,8 @@ train_op = optimizer.minimize(loss, name='train')
 
 init = tf.global_variables_initializer()
 
- **Creating a tf.train.Saver adds operations to the graph to save and
- restore variables from checkpoints.**
+ # Creating a tf.train.Saver adds operations to the graph to save and
+ restore variables from checkpoints.
 
 saver_def = tf.train.Saver().as_saver_def()
 with open('graph_mul.pb', 'wb') as f:
@@ -65,7 +65,7 @@ sess = tf.Session()
 sess.run(init)
 saver.save(sess, "/content/sample_data/h"+"/checkpoint_name.ckpt")
 
-**for watching the graph**
+# For watching the graph
 from __future__ import print_function
 writer = tf.summary.FileWriter('.')
 writer.add_graph(tf.get_default_graph())
