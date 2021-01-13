@@ -1,5 +1,5 @@
 # FederatedLearnig_Demo
-This is the code I created for showing the possibility of creating a simple linear regression model with tensorflow and used it in an android app in order to use Federated Learning. Here is both the app and server code. 
+This is the code I created for showing the possibility of creating a simple linear regression model with tensorflow and used it in an android app in order to use Federated Learning. Here is both the app and server code. Also the machine learning model file. 
 
 In this project I created a machine learning model and train it on device with my phone. 
 
@@ -16,4 +16,11 @@ In this project I created a machine learning model and train it on device with m
   
 ![Image of googleAI](https://1.bp.blogspot.com/-K65Ed68KGXk/WOa9jaRWC6I/AAAAAAAABsM/gglycD_anuQSp-i67fxER1FOlVTulvV2gCLcB/s1600/FederatedLearning_FinalFiles_Flow%2BChart1.png)
 
+
+### Model:
+
+### References: 
+
+[Google AI Blog](https://ai.googleblog.com/2017/04/federated-learning-collaborative.html)
+[Vision Air](https://vision-air.github.io/index.html)
 
