@@ -40,7 +40,7 @@ train_op = optimizer.minimize(loss, name='train')
 init = tf.global_variables_initializer()
 
  # Creating a tf.train.Saver adds operations to the graph to save and
- restore variables from checkpoints.
+ # restore variables from checkpoints.
 
 saver_def = tf.train.Saver().as_saver_def()
 with open('graph_mul.pb', 'wb') as f:
