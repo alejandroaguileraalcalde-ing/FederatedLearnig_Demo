@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="es.demo.federatedlearning_demo_linear.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+
+            <TextView
+                android:id="@+id/Text"
+                android:textSize="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="6dp"
+                android:text="Modelo:  Y = W·X + b"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/Text2"
+                android:textSize="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/Text"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                android:text="Objetivo Y = 10·X + 2"
+                android:textAlignment="center" />
+
+
+
+            <EditText
+                android:id="@+id/epochs"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/Text2"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Número de épocas"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/epochs"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="24dp"
+                android:text="Run" />
+
+            <Button
+                android:id="@+id/buttonPrueba"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Wtest"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="24dp"
+                android:text="Entrenar modelo" />
+
+            <TextView
+                android:id="@+id/W"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/Y"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="85dp"
+                android:text="W_final"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/B"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/Y"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="85dp"
+                android:layout_toEndOf="@id/W"
+                android:text="b_final"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/Wtest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/W"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="58dp"
+                android:text="W_inicial"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/Btest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/B"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="59dp"
+                android:layout_toEndOf="@id/Wtest"
+                android:text="b_inicial"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/Y"
+                android:layout_width="wrap_content"
+                android:layout_height="72dp"
+                android:layout_below="@id/button"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="6dp"
+                android:layout_marginTop="6dp"
+                android:text="Salida: Y="
+                android:textSize="24dp" />
+
+
+            <Button
+                android:id="@+id/uploadWeights"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/buttonPrueba"
+                android:layout_centerHorizontal="true"
+                android:text="Subir modelo" />
+
+            <Button
+                android:id="@+id/getModel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/uploadWeights"
+                android:text="Descargar modelo" />
+
+            <TextView
+                android:id="@+id/grafica1"
+                android:layout_width="wrap_content"
+                android:layout_height="72dp"
+                android:layout_below="@id/getModel"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="6dp"
+                android:layout_marginTop="6dp"
+                android:text="Evolución del valor de W: (Objetivo W=10)"
+                android:textSize="20dp" />
+
+            <lecho.lib.hellocharts.view.LineChartView
+                android:id="@+id/chart"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/grafica1"
+                android:layout_width="300dp"
+                android:layout_height="240dp" />
+
+            <TextView
+                android:id="@+id/grafica2"
+                android:layout_width="wrap_content"
+                android:layout_height="72dp"
+                android:layout_below="@id/chart"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="6dp"
+                android:layout_marginTop="6dp"
+                android:text="Evolución del valor de B: (Objetivo B=2) "
+                android:textSize="20dp" />
+
+            <lecho.lib.hellocharts.view.LineChartView
+                android:id="@+id/chart2"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/grafica2"
+                android:layout_width="300dp"
+                android:layout_height="240dp" />
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
+
+
