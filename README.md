@@ -3,6 +3,9 @@ This is the code I created for showing the possibility of creating a simple line
 
 In this project I created a machine learning model and train it on device with my phone. 
 
+
+
+
 ![App image](app_image.PNG)
 
 
