@@ -21,24 +21,16 @@ In this project I created a machine learning model and train it on device with m
 ``` python
 
 import tensorflow.compat.v1 as tf
-
 tf.disable_v2_behavior()
-
 from __future__ import print_function
-
 from tensorflow.keras.callbacks import TensorBoard
 
 x = tf.placeholder(tf.float32, name='input')
-
 y_ = tf.placeholder(tf.float32, name='target')
-
 W = tf.Variable(5., name='W')
-
 b = tf.Variable(3., name='b')
 
-
 y = tf.add(tf.multiply(x, W), b)
-
 y = tf.identity(y, name='output')
 
 loss = tf.reduce_mean(tf.square(y - y_),name ="loss")
@@ -51,7 +43,6 @@ init = tf.global_variables_initializer()
  restore variables from checkpoints.**
 
 saver_def = tf.train.Saver().as_saver_def()
-
 with open('graph_mul.pb', 'wb') as f:
   f.write(tf.get_default_graph().as_graph_def().SerializeToString())
 
@@ -68,9 +59,6 @@ print('Tensor to read value of b                ', b.value().name)
 print('Trainable variables: ', tf.trainable_variables())
 print('Loss:       ', loss.name)
 print('Loss:       ', loss.value)
-
-
-
 
 saver = tf.train.Saver()
 sess = tf.Session()
